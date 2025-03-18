@@ -15,7 +15,17 @@
         "POST",
         "PUT",
         "DELETE"
-      ]
+      ],
+      "FileCacheOptions": {
+        "TtlSeconds": 10
+      },
+      "RateLimitOptions": { //  rate limit
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 1,
+        "Limit": 5
+      }
     },
     {
       "DownstreamPathTemplate": "/api/Orders",
@@ -32,7 +42,17 @@
         "POST",
         "PUT",
         "DELETE"
-      ]
+      ],
+      "FileCacheOptions": {
+        "TtlSeconds": 10
+      },
+      "RateLimitOptions": { //  rate limit
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 1,
+        "Limit": 5
+      }
     }
   ]
 }
