@@ -1,4 +1,6 @@
-﻿using Product.Models.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Product.Models.Data;
+using Product.Models.Entities;
 using Product.Repositories;
 
 namespace Product.Service
@@ -6,10 +8,16 @@ namespace Product.Service
     public class ProductService : IProductService
     {
         private IProductRepository productRepository;
+        private ApplicationDbContext applicationDbContext;
 
         public ProductService(IProductRepository repository)
         {
             productRepository = repository;
+        }
+
+        public ProductService(ApplicationDbContext dbContext)
+        {
+            applicationDbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
 
         public async Task<Product1> AddProduct(Product1 product)
