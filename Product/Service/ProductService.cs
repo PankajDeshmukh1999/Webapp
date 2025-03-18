@@ -10,6 +10,7 @@ namespace Product.Service
         private IProductRepository productRepository;
         private ApplicationDbContext applicationDbContext;
 
+        [ActivatorUtilitiesConstructor]
         public ProductService(IProductRepository repository)
         {
             productRepository = repository;

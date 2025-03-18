@@ -4,7 +4,7 @@ namespace eShopOrder.Models
 {
     public class Order
     {
-        [Key]
+  
         public int Id { get; set; }
         public DateTime Orderdate { get; set; }
         public string? CustomerName { get; set; }

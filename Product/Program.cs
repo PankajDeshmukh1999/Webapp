@@ -14,12 +14,17 @@ builder.Services.AddSwaggerGen();
 
 // Register Repository and Service for Dependency Injection
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
-builder.Services.AddScoped<IProductService, ProductService>();
+//builder.Services.AddScoped<IProductService, ProductService>();
 
 // Register ApplicationDbContext
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddScoped<IProductService>(provider =>
+{
+    var repository = provider.GetRequiredService<IProductRepository>();
+    return new ProductService(repository);
+});
 
 var app = builder.Build();
 
