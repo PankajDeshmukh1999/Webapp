@@ -1,0 +1,6 @@
+[submodule "eShopAPIGateway/Models"]
+	path = eShopAPIGateway/Models
+	url = https://github.com/PankajDeshmukh1999/.Net-Core-web-api.git
+[submodule "eShopAPIGateway/Library/Models"]
+	path = eShopAPIGateway/Library/Models
+	url = https://github.com/PankajDeshmukh1999/.Net-Core-web-api.git
